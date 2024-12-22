@@ -1,7 +1,7 @@
 const twoPlayerBtn = document.querySelector(".two-players-btn");
 const computerBtn = document.querySelector(".computer-btn");
-const message = document.querySelector(".message");
 const messageContainer = document.querySelector(".message-container");
+const message = document.querySelector(".message");
 const resetBtn = document.querySelector(".reset");
 const playAgainBtn = document.querySelector(".play-again");
 const boardCell = document.querySelectorAll(".cell");
@@ -52,6 +52,9 @@ function playGame() {
         if (checkWin()) {
           currentPlayer.score++;
           scoreUpdate();
+          setTimeout(() => {
+            message.textContent = `${currentPlayer.name} wins!`;
+          }, 0);
           gameFinish = true;
         } else if (gameBoard.board.every(cell => cell !== '')) {
           alert("It's a draw!");
