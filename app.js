@@ -90,6 +90,15 @@ twoPlayerBtn.addEventListener("click", () => {
   playGame();
 });
 
+computerBtn.addEventListener("click", () => {
+  twoPlayerBtn.style.display = "none";
+  computerBtn.style.display = "none";
+  boardContainer.style.display = "grid";
+  scoreContainer.style.display = "flex";
+  resetBtn.style.display = "block";
+  playGame();
+});
+
 
 function scoreUpdate() {
   const player1Score = document.querySelector(".player-one-score");
