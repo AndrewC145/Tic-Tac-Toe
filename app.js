@@ -1,6 +1,10 @@
 const twoPlayerBtn = document.querySelector(".two-players-btn");
 const computerBtn = document.querySelector(".computer-btn");
-
+const resetBtn = document.querySelector(".reset");
+const playAgainBtn = document.querySelector(".play-again");
+const boardCell = document.querySelectorAll(".cell");
+const boardContainer = document.querySelector(".board-container");
+const scoreContainer = document.querySelector(".score-container");
 
 const gameBoard = {
   board: ['', '', '', '', '', '', '', '', ''],
@@ -25,3 +29,15 @@ const players = {
   }
 }
 
+function playGame() {
+
+}
+
+twoPlayerBtn.addEventListener("click", () => {
+  twoPlayerBtn.style.display = "none";
+  computerBtn.style.display = "none";
+  boardContainer.style.display = "grid";
+  scoreContainer.style.display = "flex";
+  resetBtn.style.display = "block";
+  playGame();
+});
