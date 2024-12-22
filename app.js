@@ -38,12 +38,23 @@ function playGame() {
       if (!gameBoard.board[index] && !gameFinish) {
         gameBoard.board[index] = currentPlayer.symbol;
         cell.textContent = currentPlayer.symbol;
+        if (checkWin()) {
+          currentPlayer.score++;
+          scoreUpdate();
+          gameFinish = true;
+          
+        }
       }
     });
   });
 }
 
-
+function checkWin() {
+  return gameBoard.winCombinations.some(combination => {
+    const [a, b, c] = combination.split('').map(Number);
+    return gameBoard.board[a] && gameBoard.board[a] === gameBoard.board[b] && gameBoard.board[a] === gameBoard.board[c];
+  })
+}
 
 
 twoPlayerBtn.addEventListener("click", () => {
@@ -54,3 +65,12 @@ twoPlayerBtn.addEventListener("click", () => {
   resetBtn.style.display = "block";
   playGame();
 });
+
+
+function scoreUpdate() {
+  const player1Score = document.querySelector(".player-one-score");
+  const player2Score = document.querySelector(".player-two-score");
+
+  player1Score.textContent = `Player 1: ${players.player1.score}`;
+  player2Score.textContent = `Player 2: ${players.player2.score}`; 
+}
