@@ -30,8 +30,21 @@ const players = {
 }
 
 function playGame() {
+  let currentPlayer = players.player1;
+  let gameFinish = false;
 
+  boardCell.forEach((cell, index) => {
+    cell.addEventListener("click", () => {
+      if (!gameBoard.board[index] && !gameFinish) {
+        gameBoard.board[index] = currentPlayer.symbol;
+        cell.textContent = currentPlayer.symbol;
+      }
+    });
+  });
 }
+
+
+
 
 twoPlayerBtn.addEventListener("click", () => {
   twoPlayerBtn.style.display = "none";
