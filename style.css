@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(168, 168, 168);
+}
+
+.title {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 0.5rem;
+}
+
+.players-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.players-container button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #d18484;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 600px;
+  height: 600px;
+}
+
+.board-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
