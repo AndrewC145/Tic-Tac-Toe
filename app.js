@@ -1,5 +1,4 @@
 const twoPlayerBtn = document.querySelector(".two-players-btn");
-const computerBtn = document.querySelector(".computer-btn");
 const messageContainer = document.querySelector(".message-container");
 const message = document.querySelector(".message");
 const resetBtn = document.querySelector(".reset");
@@ -24,11 +23,6 @@ const players = {
     symbol: 'O',
     score: 0,
   },
-  computer: {
-    name: 'Computer',
-    symbol: 'O',
-    score: 0,
-  }
 }
 
 function createGame() {
@@ -55,6 +49,7 @@ function playGame() {
           setTimeout(() => {
             message.textContent = `${currentPlayer.name} wins!`;
           }, 0);
+          playAgainBtn.style.display = "block";
           gameFinish = true;
         } else if (gameBoard.board.every(cell => cell !== '')) {
           alert("It's a draw!");
@@ -83,22 +78,11 @@ function checkWin() {
 
 twoPlayerBtn.addEventListener("click", () => {
   twoPlayerBtn.style.display = "none";
-  computerBtn.style.display = "none";
   boardContainer.style.display = "grid";
   scoreContainer.style.display = "flex";
   resetBtn.style.display = "block";
   playGame();
 });
-
-computerBtn.addEventListener("click", () => {
-  twoPlayerBtn.style.display = "none";
-  computerBtn.style.display = "none";
-  boardContainer.style.display = "grid";
-  scoreContainer.style.display = "flex";
-  resetBtn.style.display = "block";
-  playGame();
-});
-
 
 function scoreUpdate() {
   const player1Score = document.querySelector(".player-one-score");
@@ -119,4 +103,5 @@ resetBtn.addEventListener("click", () => {
 playAgainBtn.addEventListener("click", () => {
   createGame();
   scoreUpdate();
+  playGame();
 });
