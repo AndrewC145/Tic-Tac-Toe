@@ -62,8 +62,11 @@ main {
 
 .board-container div {
   display: flex;
+  width: 200px;
+  height: 190px;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   font-size: 3rem;
   background-color: rgb(241, 241, 241);
   color: black;
