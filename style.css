@@ -41,6 +41,17 @@ main {
   cursor: pointer;
 }
 
+.message-container {
+  display: none;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.message-container .message {
+  font-size: 1.5rem;
+  color: white;
+}
+
 .board-container {
   display: none;
   grid-template-columns: repeat(3, 1fr);

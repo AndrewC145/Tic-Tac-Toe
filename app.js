@@ -1,6 +1,7 @@
 const twoPlayerBtn = document.querySelector(".two-players-btn");
 const computerBtn = document.querySelector(".computer-btn");
 const message = document.querySelector(".message");
+const messageContainer = document.querySelector(".message-container");
 const resetBtn = document.querySelector(".reset");
 const playAgainBtn = document.querySelector(".play-again");
 const boardCell = document.querySelectorAll(".cell");
@@ -39,6 +40,9 @@ function createGame() {
 function playGame() {
   let currentPlayer = players.player1;
   let gameFinish = false;
+  messageContainer.style.display = "block";
+  message.textContent = `${players.player1.name}'s turn`;
+  scoreUpdate();
 
   boardCell.forEach((cell, index) => {
     cell.addEventListener("click", () => {
